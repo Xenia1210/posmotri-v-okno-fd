@@ -43,19 +43,25 @@ html {
 .content {
   display: grid;
   grid-template-columns: 711px 399px;
-  grid-template-rows: 386px 54px;
+  grid-template-rows: 464px 70px;
   grid-template-areas:
-    "video content"
-    "search content";
+    "result content"
+    "result content";
   grid-column-gap: 30px;
   width: 100%;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.result {
+  grid-area: result;
 }
 
 .result__video-container {
-  grid-area: video;
-  padding-top: 73px;
+  margin-top: 78px;
+  margin-bottom: 16px;
   min-width: 711px;
-  min-height: 386px;
+  height: 386px;
   position: relative;
 }
 
@@ -66,7 +72,6 @@ html {
 }
 
 .search-form {
-  grid-area: search;
   display: flex;
   justify-content: space-between;
   min-height: 54px;
@@ -150,7 +155,7 @@ html {
   content: "";
 }
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   display: block;
   width: 15px;
   height: 15px;
@@ -298,7 +303,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 
 .content__video-card-description {
   line-height: 16.2px;
-  line-clamp: 1;
+  -webkit-line-clamp: 1;
 }
 
 .content__video-card-thumbnail {
